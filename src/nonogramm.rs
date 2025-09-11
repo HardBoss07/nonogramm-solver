@@ -1,6 +1,7 @@
 use std::fs;
 use crate::puzzle::{PuzzleJson, PuzzleData};
 
+#[derive(Clone)]
 pub struct Nonogramm {
     pub size: usize,
     pub rows: Vec<Vec<u8>>,
