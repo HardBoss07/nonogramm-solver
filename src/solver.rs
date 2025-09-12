@@ -11,7 +11,7 @@ impl Solver {
         }
     }
 
-    pub fn solve(&mut self) -> Vec<char> {
+    pub fn solve(&mut self) {
         let mut board = self.nonogramm.board.clone();
 
         let size = self.nonogramm.size;
@@ -53,7 +53,9 @@ impl Solver {
             }
         }
 
-        board.clone()
+        // next: if only 1 clue and clue is bigger or equal to size / 2 fill in fixed places
+
+        self.nonogramm.board = board;
     }
 
     fn is_golden_rule(&self, clues: &[u8]) -> bool {

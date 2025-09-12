@@ -6,11 +6,11 @@ use nonogramm::Nonogramm;
 use solver::Solver;
 
 fn main() {
-    let puzzle = Nonogramm::load("puzzle1");
+    let puzzle = Nonogramm::load("puzzle3");
     let mut solver = Solver::new(puzzle.clone());
 
     println!("{}", puzzle.to_string_board());
 
-    solver.nonogramm.board = solver.solve();
+    solver.solve();
     println!("{}", Nonogramm::to_string_board(&solver.nonogramm));
 }
